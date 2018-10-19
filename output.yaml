@@ -1,0 +1,49 @@
+cwlVersion: v1.0
+class: Workflow
+id: first_test
+label: First test
+inputs:
+  - id : force
+    type : File?
+  - id : genome_file
+    type : File?
+  - id : indel_file
+    type : File?
+  - id : input_mate1_FQ_GZ
+    type : File?
+  - id : input_mate1_FQ_GZ_1
+    type : File?
+  - id : ref_dir
+    type : File?
+  - id : snp_file
+    type : File?
+outputs:
+  - id : dnaseq_al_normal_logs.gz
+    outputSource : ['dnaseq_alignment_normal/output_gz']
+    type : File?
+  - id : dnaseq_al_tumor_logs.gz
+    outputSource : ['dnaseq_alignment_tumor/output_gz']
+    type : File?
+  - id : dnaseq_coclean_logs.gz
+    outputSource : ['dnaseq_co_cleaning/output_gz']
+    type : File?
+  - id : optitype_logs.gz
+    outputSource : ['optitype/output_gz']
+    type : File?
+  - id : output_mut
+    outputSource : ['vep/output_mut']
+    type : File?
+  - id : output_tsv
+    outputSource : ['pvacseq/output_tsv']
+    type : File
+  - id : pvacseq_logs.gz
+    outputSource : ['pvacseq/output_gz']
+    type : File?
+  - id : varscan_logs.gz
+    outputSource : ['varscan_239/output_gz']
+    type : File?
+  - id : vep_logs.gz
+    outputSource : ['vep/output_gz']
+    type : File?
+requirements: []
+$namespaces: {'sbg': 'https://www.sevenbridges.com'}
