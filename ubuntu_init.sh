@@ -4,7 +4,7 @@
 
 export DEBIAN_FRONTEND="noninteractive"
 
-apt-get update && apt-get --yes --no-install-recommends install \
+apt-get update && apt-get --yes upgrade && apt-get --yes --no-install-recommends install \
     build-essential \
     pkg-config \
     cmake \
