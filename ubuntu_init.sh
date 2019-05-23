@@ -26,6 +26,7 @@ apt-get update && apt-get --yes upgrade && apt-get --yes --no-install-recommends
     htop \
     iotop \
     git-core \
+    ssh \
     openssh-client \
     openssl \
     libssl-dev \
