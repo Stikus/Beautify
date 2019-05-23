@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # all commands executed from 'root' => 'sudo su' before use
+# wget -q https://raw.githubusercontent.com/Stikus/Beautify/master/ubuntu_init.sh AKA tuny.cc/stik
 
 export DEBIAN_FRONTEND="noninteractive"
 
@@ -69,12 +70,7 @@ apt-get --yes --no-install-recommends install python3.6 python3.6-dev python3-pi
     && ln -s /usr/bin/python3.6 /usr/bin/python3 \
     && ln -s /usr/bin/python3.6 /usr/bin/python
 pip3 install --upgrade pip
-
 hash -d pip3
-
-# wget -q https://raw.githubusercontent.com/Stikus/Beautify/master/ubuntu_init_2.sh
-# bash ubuntu_init_2.sh # for pip update - second part
-
 pip3 install --upgrade wheel setuptools
 pip3 install --upgrade psutil
 
@@ -105,3 +101,6 @@ mkdir -p "$SOFT"
 
 # Add GKS vm01 pub RSA-key
 sudo -Hu "$MAINUSER" bash -c 'mkdir -p "$HOME/.ssh" && wget -q "ftp://bioftp.cspmz.ru/certs/keys/GKS_id_rsa.pub" -O ->> "$HOME/.ssh/authorized_keys"'
+
+# Final updates
+apt-get update && apt-get -y dist-upgrade
