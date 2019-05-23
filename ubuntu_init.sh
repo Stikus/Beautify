@@ -64,7 +64,7 @@ MAINUSER="bio"
 usermod -a -G docker "$MAINUSER"
 
 # python3.6 & pip3
-apt-get --yes --no-install-recommends install python3.6 python3.6-dev python3-pip \
+apt-get --yes --no-install-recommends install python3.6 python3.6-dev python3-pip python3-testresources \
     && rm /usr/bin/python3 \
     && ln -s /usr/bin/python3.6 /usr/bin/python3 \
     && ln -s /usr/bin/python3.6 /usr/bin/python
@@ -104,4 +104,4 @@ export SOFT="/soft"
 mkdir -p "$SOFT"
 
 # Add GKS vm01 pub RSA-key
-sudo -Hu "$MAINUSER" bash -c 'mkdir -p "$HOME/.ssh" && wget -q "ftp://bioftp.cspmz.ru/certs/keys/GKS_id_rsa.pub" -O ->> "$HOME/.ssh/authorized_keys"''
+sudo -Hu "$MAINUSER" bash -c 'mkdir -p "$HOME/.ssh" && wget -q "ftp://bioftp.cspmz.ru/certs/keys/GKS_id_rsa.pub" -O ->> "$HOME/.ssh/authorized_keys"'
