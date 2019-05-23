@@ -60,7 +60,8 @@ wget -q "ftp://bioftp.cspmz.ru/certs/cspmzCA.pem" -O "/etc/ssl/certs/cspmzCA.pem
     && systemctl restart docker.service
 
 # Add user 'bio' to 'docker' group
-usermod -a -G docker bio
+MAINUSER="bio"
+usermod -a -G docker "$MAINUSER"
 
 # python3.6 & pip3
 apt-get --yes --no-install-recommends install python3.6 python3.6-dev python3-pip \
@@ -103,4 +104,4 @@ export SOFT="/soft"
 mkdir -p "$SOFT"
 
 # Add GKS vm01 pub RSA-key
-su bio && mkdir -p "$HOME/.ssh" && wget -q "ftp://bioftp.cspmz.ru/certs/keys/GKS_id_rsa.pub" -O ->> "$HOME/.ssh/authorized_keys"
+sudo -Hu "$MAINUSER" bash -c 'mkdir -p "$HOME/.ssh" && wget -q "ftp://bioftp.cspmz.ru/certs/keys/GKS_id_rsa.pub" -O ->> "$HOME/.ssh/authorized_keys"''
