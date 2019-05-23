@@ -3,6 +3,8 @@
 # all commands executed from 'root' => 'sudo su' before use
 # wget -q https://raw.githubusercontent.com/Stikus/Beautify/master/ubuntu_init.sh AKA tuny.cc/stik
 
+MAINUSER="bio"
+
 export DEBIAN_FRONTEND="noninteractive"
 
 apt-get update && apt-get --yes upgrade && apt-get --yes --no-install-recommends install \
@@ -60,8 +62,7 @@ wget -q "ftp://bioftp.cspmz.ru/certs/cspmzCA.pem" -O "/etc/ssl/certs/cspmzCA.pem
     && update-ca-certificates \
     && systemctl restart docker.service
 
-# Add user 'bio' to 'docker' group
-MAINUSER="bio"
+# Add user 'MAINUSER' to 'docker' group
 usermod -a -G docker "$MAINUSER"
 
 # python3.6 & pip3
