@@ -5,6 +5,15 @@
 
 MAINUSER="bio"
 
+# swapfile settings
+swapoff /swapfile
+rm /swapfile
+touch /swapfile
+chmod 600 /swapfile
+dd if=/dev/zero of=/swapfile bs=1M count=8192 oflag=append conv=notrunc
+mkswap /swapfile
+swapon /swapfile
+
 export DEBIAN_FRONTEND="noninteractive"
 
 apt-get update && apt-get --yes upgrade && apt-get --yes --no-install-recommends install \
