@@ -51,7 +51,8 @@ apt-get update && apt-get --yes upgrade && apt-get --yes --no-install-recommends
     libxslt1-dev \
     libpq-dev \
     qemu-guest-agent \
-    cifs-utils
+    cifs-utils \
+    xfsprogs
 
 export TZ="Europe/Moscow"
 rm /etc/localtime \
