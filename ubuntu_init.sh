@@ -52,7 +52,8 @@ apt-get update && apt-get --yes upgrade && apt-get --yes --no-install-recommends
     libpq-dev \
     qemu-guest-agent \
     cifs-utils \
-    xfsprogs
+    xfsprogs \
+    nfs-common
 
 export TZ="Europe/Moscow"
 rm /etc/localtime \
