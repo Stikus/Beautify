@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 # all commands executed from 'root' => 'sudo su' before use
 # wget -q https://raw.githubusercontent.com/Stikus/Beautify/master/ubuntu_init.sh AKA tuny.cc/stik
 
