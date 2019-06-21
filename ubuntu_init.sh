@@ -54,7 +54,8 @@ apt-get update && apt-get --yes upgrade && apt-get --yes --no-install-recommends
     qemu-guest-agent \
     cifs-utils \
     xfsprogs \
-    nfs-common
+    nfs-common \
+    tree
 
 export TZ="Europe/Moscow"
 rm /etc/localtime \
