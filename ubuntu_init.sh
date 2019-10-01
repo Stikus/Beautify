@@ -55,7 +55,11 @@ apt-get update && apt-get --yes upgrade && apt-get --yes --no-install-recommends
     cifs-utils \
     xfsprogs \
     nfs-common \
-    tree
+    tree \
+    ntp
+
+systemctl start ntpd
+systemctl enable ntpd
 
 export TZ="Europe/Moscow"
 rm /etc/localtime \
